@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.preference.PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:title="Settings">
+
+    <PreferenceCategory android:title="Appearance">
+        <SwitchPreferenceCompat
+            app:key="notifications"
+            app:title="Enable message notifications" />
+        <EditTextPreferenceCompat
+            app:key="fontSize"
+            app:title="Font Size"/>
+    </PreferenceCategory>
+</androidx.preference.PreferenceScreen>

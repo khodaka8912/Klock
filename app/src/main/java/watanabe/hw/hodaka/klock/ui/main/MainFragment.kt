@@ -1,12 +1,12 @@
 package watanabe.hw.hodaka.klock.ui.main
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.fragment.app.Fragment
 import watanabe.hw.hodaka.klock.R
 import java.time.Instant
 import java.time.ZoneId
@@ -34,8 +34,8 @@ class MainFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        Log.i(TAG, "onResume")
-        clockScheduler = timer(period = 1000) {
+        Log.v(TAG, "onResume")
+        clockScheduler = timer(period = 500) {
             clockView.post {
                 clockView.text = currentTime()
             }
@@ -44,7 +44,7 @@ class MainFragment : Fragment() {
 
     override fun onPause() {
         super.onPause()
-        Log.i(TAG, "onPause")
+        Log.v(TAG, "onPause")
         clockScheduler?.cancel()
     }
 
